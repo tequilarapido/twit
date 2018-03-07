@@ -1,10 +1,10 @@
 <?php
 
-namespace TequilaRapido\Twit;
+namespace Tequilarapido\Twit;
 
 use Illuminate\Support\ServiceProvider;
 
-class TwitterAppServiceProvider extends ServiceProvider
+class TwitServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
@@ -22,5 +22,9 @@ class TwitterAppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/twit.php', 'twit');
+
+        $this->app->singleton(TwitApps::class, function ($app) {
+            return new TwitApps($app['config']['twit']['apps']);
+        });
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace TequilaRapido\Twit;
+namespace Tequilarapido\Twit;
 
 use Illuminate\Support\Collection;
 

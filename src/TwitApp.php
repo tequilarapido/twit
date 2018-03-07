@@ -1,11 +1,16 @@
 <?php
 
-namespace TequilaRapido\Twit;
+namespace Tequilarapido\Twit;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
+use Illuminate\Support\Str;
+use Tequilarapido\Twit\Endpoints\EndpointAliases;
 
 class TwitApp
 {
+    use EndpointAliases;
+
+    /** @var string */
     public $key;
 
     /** @var RateLimits */
@@ -13,6 +18,9 @@ class TwitApp
 
     /** @var  TwitterOAuth */
     private $client;
+
+    /** @var callable */
+    private $tolerateTimeoutCallback;
 
     /**
      * TwitApp constructor.
@@ -30,6 +38,20 @@ class TwitApp
             $config['access_token'],
             $config['access_token_secret']
         );
+    }
+
+    /**
+     * Tolerate twitter timeout for next call
+     *
+     * @param callable $callable
+     *
+     * @return $this
+     */
+    public function tolerateTimeout(callable $callable)
+    {
+        $this->tolerateTimeoutCallback = $callable;
+
+        return $this;
     }
 
     /**
@@ -99,4 +121,5 @@ class TwitApp
 
         return object_get($response, "resources.{$resource}.{$endpoint}");
     }
+
 }
