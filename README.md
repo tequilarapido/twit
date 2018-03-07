@@ -1,4 +1,4 @@
 
-# tequilrapido/twitterapp
+# tequilrapido/twit
 
 wip ...
