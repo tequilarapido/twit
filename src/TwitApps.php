@@ -9,7 +9,7 @@ class TwitApps
     /** @var Collection */
     private $pool;
 
-    /** @var  TwitApp */
+    /** @var TwitApp */
     private $current;
 
     public function __construct($apps)
@@ -26,7 +26,7 @@ class TwitApps
             return $app->available();
         });
 
-        if (!$this->current) {
+        if (! $this->current) {
             // We will return the first one to get the rate limits so we can sleep
             // and wait for reset
             $this->current = $this->pool->get(0);
@@ -41,9 +41,7 @@ class TwitApps
             if ($app->rateLimits) {
                 return $app->rateLimits->waitTime();
             }
-            return null;
         })->filter()->min();
-
 
         return $waitTime ?: 0;
     }
@@ -54,5 +52,4 @@ class TwitApps
             return $app->rateLimits = null;
         });
     }
-
 }

@@ -3,7 +3,6 @@
 namespace Tequilarapido\Twit;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
-use Illuminate\Support\Str;
 use Tequilarapido\Twit\Endpoints\EndpointAliases;
 
 class TwitApp
@@ -16,7 +15,7 @@ class TwitApp
     /** @var RateLimits */
     public $rateLimits;
 
-    /** @var  TwitterOAuth */
+    /** @var TwitterOAuth */
     private $client;
 
     /** @var callable */
@@ -41,7 +40,7 @@ class TwitApp
     }
 
     /**
-     * Tolerate twitter timeout for next call
+     * Tolerate twitter timeout for next call.
      *
      * @param callable $callable
      *
@@ -55,7 +54,7 @@ class TwitApp
     }
 
     /**
-     * Get TwitterOAuth client
+     * Get TwitterOAuth client.
      *
      * @return TwitterOAuth
      */
@@ -65,7 +64,7 @@ class TwitApp
     }
 
     /**
-     * Determine if the app is available for use (Rate limit not hit yet)
+     * Determine if the app is available for use (Rate limit not hit yet).
      *
      *
      * @return bool
@@ -80,7 +79,7 @@ class TwitApp
     }
 
     /**
-     * Remaining requests before hitting the limit
+     * Remaining requests before hitting the limit.
      *
      * @return int
      */
@@ -90,7 +89,7 @@ class TwitApp
     }
 
     /**
-     * Forwarded get call to client and catches rate limits
+     * Forwarded get call to client and catches rate limits.
      *
      * @param $endpoint
      * @param $parameters
@@ -107,7 +106,7 @@ class TwitApp
     }
 
     /**
-     * Return the current rate limit status for a specific endpoint
+     * Return the current rate limit status for a specific endpoint.
      *
      * ie. getRatelimitStatus('followers', '/followers/list')
      *
@@ -121,5 +120,4 @@ class TwitApp
 
         return object_get($response, "resources.{$resource}.{$endpoint}");
     }
-
 }

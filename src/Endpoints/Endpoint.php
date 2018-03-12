@@ -6,7 +6,7 @@ use Tequilarapido\Twit\TwitApp;
 
 abstract class Endpoint
 {
-    /** @var  TwitApp */
+    /** @var TwitApp */
     protected $app;
 
     /** @var array */
@@ -32,7 +32,7 @@ abstract class Endpoint
     abstract protected function execute();
 
     /**
-     * Sets tolerate timeout callback
+     * Sets tolerate timeout callback.
      *
      * @param callable $callback
      * @return $this
@@ -45,7 +45,7 @@ abstract class Endpoint
     }
 
     /**
-     * Sets request parameters
+     * Sets request parameters.
      *
      * @param array $parameters
      * @return $this
@@ -70,7 +70,7 @@ abstract class Endpoint
     public function send()
     {
         // No tolorate callback ?
-        if (!$this->tolerateTimeoutCallback) {
+        if (! $this->tolerateTimeoutCallback) {
             return $this->execute();
         }
 
@@ -78,7 +78,7 @@ abstract class Endpoint
         try {
             return $this->execute();
         } catch (\Exception $e) {
-            if (!str_contains($e->getMessage(), 'Operation timed out')) {
+            if (! str_contains($e->getMessage(), 'Operation timed out')) {
                 throw $e;
             }
 

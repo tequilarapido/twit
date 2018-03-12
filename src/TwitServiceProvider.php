@@ -12,7 +12,7 @@ class TwitServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/twit.php' => config_path('twit.php'),
+            __DIR__.'/../config/twit.php' => config_path('twit.php'),
         ]);
     }
 
@@ -21,7 +21,7 @@ class TwitServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/twit.php', 'twit');
+        $this->mergeConfigFrom(__DIR__.'/../config/twit.php', 'twit');
 
         $this->app->singleton(TwitApps::class, function ($app) {
             return new TwitApps($app['config']['twit']['apps']);

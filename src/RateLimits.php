@@ -4,7 +4,6 @@ namespace Tequilarapido\Twit;
 
 class RateLimits
 {
-
     public $limit;
 
     public $remaining;
@@ -12,7 +11,7 @@ class RateLimits
     public $reset;
 
     /**
-     * Construct instance from headers response
+     * Construct instance from headers response.
      *
      * @param $headers
      * @return static
@@ -32,6 +31,6 @@ class RateLimits
      */
     public function waitTime()
     {
-        return (int)$this->reset - time() + 5; /* we add 5 secs for safety !*/
+        return (int) $this->reset - time() + 5; /* we add 5 secs for safety !*/
     }
 }

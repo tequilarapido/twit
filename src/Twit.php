@@ -3,7 +3,7 @@
 namespace Tequilarapido\Twit;
 
 /**
- * Helper trait
+ * Helper trait.
  */
 trait Twit
 {
