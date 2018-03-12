@@ -15,9 +15,7 @@ namespace Tequilarapido\Twit\Endpoints;
  *      'include_user_entities' => false,
  *      'count' => 200,
  * ]
- *
  */
-
 class GetFollowers extends Endpoint
 {
     protected function execute()

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Tequilarapido\Twit\Endpoints;
 
 trait EndpointAliases

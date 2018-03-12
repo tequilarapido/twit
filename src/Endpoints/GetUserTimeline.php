@@ -15,7 +15,6 @@ namespace Tequilarapido\Twit\Endpoints;
  *      'trim_user' => true,
  *      'include_rts' => true,
  *  ]
- *
  */
 class GetUserTimeline extends Endpoint
 {
