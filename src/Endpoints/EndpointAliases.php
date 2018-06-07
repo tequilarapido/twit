@@ -13,4 +13,9 @@ trait EndpointAliases
     {
         return new GetUserTimeline($this);
     }
+
+    public function searchTweets()
+    {
+        return new SearchTweets($this);
+    }
 }
