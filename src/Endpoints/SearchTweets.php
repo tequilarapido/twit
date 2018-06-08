@@ -3,17 +3,15 @@
 namespace Tequilarapido\Twit\Endpoints;
 
 /**
- * Get twitter user followers.
+ * Get twitter search tweets.
  *
- * @see https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-followers-list
+ * @see https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets.html
  *
  * Parameters sample
  *  [
- *      'screen_name' => $screen_name,
- *      'cursor' => $cursor,
- *      'skip_statuses' => true,
- *      'include_user_entities' => false,
- *      'count' => 200,
+ *      'q' => '@tequilarapido',
+ *      'count' => 25,
+ *      ...
  * ]
  *
  */
