@@ -13,9 +13,7 @@ namespace Tequilarapido\Twit\Endpoints;
  *      'count' => 25,
  *      ...
  * ]
- *
  */
-
 class SearchTweets extends Endpoint
 {
     protected function execute()
