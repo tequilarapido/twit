@@ -1,14 +1,14 @@
 {
-    "name": "tequilarapido-twit",
-    "version": "0.0.3",
-    "private": true,
-    "scripts": {
-      "release-patch-dryrun": "standard-version --release-as patch --no-verify --dry-run",
-      "release-patch": "standard-version --release-as patch --no-verify",
-      "release-minor": "standard-version --release-as minor --no-verify",
-      "release-major": "standard-version --release-as major --no-verify"
-    },
-    "dependencies": {
-      "standard-version": "^4.4.0"
-    }
+  "name": "tequilarapido-twit",
+  "version": "0.0.4",
+  "private": true,
+  "scripts": {
+    "release-patch-dryrun": "standard-version --release-as patch --no-verify --dry-run",
+    "release-patch": "standard-version --release-as patch --no-verify",
+    "release-minor": "standard-version --release-as minor --no-verify",
+    "release-major": "standard-version --release-as major --no-verify"
+  },
+  "dependencies": {
+    "standard-version": "^4.4.0"
   }
+}
